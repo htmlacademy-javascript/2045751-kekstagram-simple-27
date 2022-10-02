@@ -9,14 +9,11 @@ function returnsRandomNumber (min, max) {
     min = max;
     max = temp;
   }
-  if (min >= 0 && max >= 0) {
-    return randomNumber;
-  } else {
-    return NaN;
-  }
+
+  return (min >= 0 && max >= 0) ? randomNumber : NaN;
 }
 
-console.log(returnsRandomNumber (20, -10) );
+console.log(returnsRandomNumber (2, -10) );
 
 //Функция для проверки максимальной длины строки:
 
