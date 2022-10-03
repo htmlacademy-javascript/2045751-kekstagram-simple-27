@@ -1,19 +1,21 @@
 //Функция возвращает случайное целое число из переданного диапазона включительно:
 
-// function returnsRandomNumber (min, max) {
+function returnsRandomNumber (min, max) {
 
-//   const randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
+  const randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
 
-//   if (min >= max) {
-//     const temp = min;
-//     min = max;
-//     max = temp;
-//   }
+  if (min >= max) {
+    return NaN;
+  }
 
-//   return (min >= 0 && max >= 0) ? randomNumber : NaN;
-// }
+  if ( (typeof min === 'number' && typeof max === 'number') && (min >= 0 && max >= 0) ) {
+    return randomNumber;
+  }else {
+    return NaN;
+  }
+}
 
-// console.log(returnsRandomNumber (2, -10) );
+console.log(returnsRandomNumber (60, 80) );
 
 //Функция для проверки максимальной длины строки:
 
