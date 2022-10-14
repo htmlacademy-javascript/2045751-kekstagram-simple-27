@@ -8,8 +8,6 @@ function returnsRandomNumber (min, max) {
 
 }
 
-console.log(returnsRandomNumber (10, 50) );
-
 //Функция для проверки максимальной длины строки:
 
 function checksLengthString (stringToTest, maximumLengthString) {
@@ -17,6 +15,3 @@ function checksLengthString (stringToTest, maximumLengthString) {
   return (stringToTest.length <= maximumLengthString);
 
 }
-
-console.log(checksLengthString('Это короткая строка', 20) );
-console.log(checksLengthString('Эта строка длиннее первой', 20) );
