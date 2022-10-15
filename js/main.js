@@ -5,6 +5,15 @@ const NUMBER_LIKES = {
   max: 200
 };
 
+//Массив с описанием фотографии:
+
+const PHOTO_DESCRIPTION = [
+  'описание1',
+  'описание2',
+  'описание3',
+  'описание4'
+];
+
 //Массив комментариев:
 
 const NUMBER_COMMENTS = [
@@ -32,17 +41,28 @@ function checksLengthString (stringToTest, maximumLengthString) {
 
 }
 
-//Создание объекта "описание фотографии":
+//Функция вовращает случайный элемент массива:
 
-const photoDescription = {
-  id: '',
-  url: '',
-  description: '',
-  likes: returnsRandomNumber(NUMBER_LIKES.min, NUMBER_LIKES.max),
-  comments: NUMBER_COMMENTS[returnsRandomNumber(0, NUMBER_COMMENTS.length - 1) ]
+function returnsRandomElementArray(element) {
+
+  return element[returnsRandomNumber(0, element.length - 1) ];
+
+}
+
+//Создание объекта "описание фотографии пользователя":
+
+function createUserPhoto() {
+
+  return {
+    id: '',
+    likes: returnsRandomNumber(NUMBER_LIKES.min, NUMBER_LIKES.max),
+    comments: returnsRandomElementArray(NUMBER_COMMENTS)
+  };
+
 };
 
-// console.log(photoDescription.likes);
-console.log(photoDescription.comments);
+//Создание массива объектов фотографий:
 
+const createArrayUserPhoto = Array.from( {length: NUMBER_OBJECTS}, createUserPhoto);
 
+console.log(createArrayUserPhoto);
