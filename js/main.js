@@ -5,6 +5,7 @@ const NUMBER_LIKES = {
   max: 200
 };
 
+
 //Массив с описанием фотографии:
 
 const PHOTO_DESCRIPTION = [
@@ -51,18 +52,19 @@ function returnsRandomElementArray(element) {
 
 //Создание объекта "описание фотографии пользователя":
 
-function createUserPhoto() {
+function createUserPhoto(index) {
 
   return {
-    id: '',
+    id: index,
     likes: returnsRandomNumber(NUMBER_LIKES.min, NUMBER_LIKES.max),
     comments: returnsRandomElementArray(NUMBER_COMMENTS)
   };
 
-};
+}
+
 
 //Создание массива объектов фотографий:
 
-const createArrayUserPhoto = Array.from( {length: NUMBER_OBJECTS}, createUserPhoto);
+const createArrayUserPhoto = Array.from( {length: NUMBER_OBJECTS}, (_, indexPhoto) => createUserPhoto(indexPhoto + 1) );
 
 console.log(createArrayUserPhoto);
