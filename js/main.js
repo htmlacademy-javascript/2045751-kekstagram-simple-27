@@ -1,8 +1,18 @@
 const NUMBER_OBJECTS = 25;
+
 const NUMBER_LIKES = {
   min: 15,
   max: 200
-}
+};
+
+//Массив комментариев:
+
+const NUMBER_COMMENTS = [
+  'комментарий1',
+  'комментарий2',
+  'комментарий3',
+  'комментарий4',
+];
 
 //Функция возвращает случайное целое число из переданного диапазона включительно:
 
@@ -22,16 +32,17 @@ function checksLengthString (stringToTest, maximumLengthString) {
 
 }
 
-
-//Создание объекта описание фотографии:
+//Создание объекта "описание фотографии":
 
 const photoDescription = {
   id: '',
   url: '',
   description: '',
   likes: returnsRandomNumber(NUMBER_LIKES.min, NUMBER_LIKES.max),
-  comments: ''
-}
+  comments: NUMBER_COMMENTS[returnsRandomNumber(0, NUMBER_COMMENTS.length - 1) ]
+};
 
-console.log(photoDescription.likes);
+// console.log(photoDescription.likes);
+console.log(photoDescription.comments);
+
 
