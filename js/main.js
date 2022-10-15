@@ -56,6 +56,7 @@ function createUserPhoto(index) {
 
   return {
     id: index,
+    url: `photos/${index}.jpg`,
     likes: returnsRandomNumber(NUMBER_LIKES.min, NUMBER_LIKES.max),
     comments: returnsRandomElementArray(NUMBER_COMMENTS)
   };
