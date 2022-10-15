@@ -5,6 +5,11 @@ const NUMBER_LIKES = {
   max: 200
 };
 
+const NUMBER_COMMENTS = {
+  min: 0,
+  max: 200
+};
+
 
 //Массив с описанием фотографии:
 
@@ -13,15 +18,6 @@ const PHOTO_DESCRIPTION = [
   'описание2',
   'описание3',
   'описание4'
-];
-
-//Массив комментариев:
-
-const NUMBER_COMMENTS = [
-  'комментарий1',
-  'комментарий2',
-  'комментарий3',
-  'комментарий4',
 ];
 
 //Функция возвращает случайное целое число из переданного диапазона включительно:
@@ -57,12 +53,12 @@ function createUserPhoto(index) {
   return {
     id: index,
     url: `photos/${index}.jpg`,
+    description: returnsRandomElementArray(PHOTO_DESCRIPTION),
     likes: returnsRandomNumber(NUMBER_LIKES.min, NUMBER_LIKES.max),
-    comments: returnsRandomElementArray(NUMBER_COMMENTS)
+    comments: returnsRandomNumber(NUMBER_COMMENTS.min, NUMBER_COMMENTS.max)
   };
 
 }
-
 
 //Создание массива объектов фотографий:
 
