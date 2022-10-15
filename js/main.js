@@ -10,7 +10,6 @@ const NUMBER_COMMENTS = {
   max: 200
 };
 
-
 //Массив с описанием фотографии:
 
 const PHOTO_DESCRIPTION = [
