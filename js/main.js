@@ -1,3 +1,24 @@
+const NUMBER_OBJECTS = 25;
+
+const NUMBER_LIKES = {
+  min: 15,
+  max: 200
+};
+
+const NUMBER_COMMENTS = {
+  min: 0,
+  max: 200
+};
+
+//Массив с описанием фотографии:
+
+const PHOTO_DESCRIPTION = [
+  'описание1',
+  'описание2',
+  'описание3',
+  'описание4'
+];
+
 //Функция возвращает случайное целое число из переданного диапазона включительно:
 
 function returnsRandomNumber (min, max) {
@@ -8,8 +29,6 @@ function returnsRandomNumber (min, max) {
 
 }
 
-console.log(returnsRandomNumber (10, 50) );
-
 //Функция для проверки максимальной длины строки:
 
 function checksLengthString (stringToTest, maximumLengthString) {
@@ -18,5 +37,30 @@ function checksLengthString (stringToTest, maximumLengthString) {
 
 }
 
-console.log(checksLengthString('Это короткая строка', 20) );
-console.log(checksLengthString('Эта строка длиннее первой', 20) );
+//Функция вовращает случайный элемент массива:
+
+function returnsRandomElementArray(element) {
+
+  return element[returnsRandomNumber(0, element.length - 1) ];
+
+}
+
+//Создание объекта "описание фотографии пользователя":
+
+function createUserPhoto(index) {
+
+  return {
+    id: index,
+    url: `photos/${index}.jpg`,
+    description: returnsRandomElementArray(PHOTO_DESCRIPTION),
+    likes: returnsRandomNumber(NUMBER_LIKES.min, NUMBER_LIKES.max),
+    comments: returnsRandomNumber(NUMBER_COMMENTS.min, NUMBER_COMMENTS.max)
+  };
+
+}
+
+//Создание массива объектов фотографий:
+
+const createArrayUserPhoto = Array.from( {length: NUMBER_OBJECTS}, (_, indexPhoto) => createUserPhoto(indexPhoto + 1) );
+
+console.log(createArrayUserPhoto);
