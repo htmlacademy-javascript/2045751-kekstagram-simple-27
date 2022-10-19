@@ -1,11 +1,3 @@
-//Функция для проверки максимальной длины строки:
-
-function checksLengthString (stringToTest, maximumLengthString) {
-
-  return (stringToTest.length <= maximumLengthString);
-
-}
-
 //Функция возвращает случайное целое число из переданного диапазона включительно:
 
 function returnsRandomNumber (min, max) {
