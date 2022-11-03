@@ -13,7 +13,7 @@ const randomUserPicture = templatePicture.querySelector('.picture');
 
 const fragmentPicture = document.createDocumentFragment();
 
-//Проходим циклом по масииву объектами:
+//Проходим циклом по массиву с объектами:
 
 const arrayUserPhotos = createArrayUserPhotos();
 
