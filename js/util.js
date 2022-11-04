@@ -16,4 +16,11 @@ function returnsRandomElementArray(element) {
 
 }
 
+
+// function isEscapeKey(evt) {
+
+//   return evt.key === 'Escape';
+
+// }
+
 export {returnsRandomElementArray, returnsRandomNumber};
