@@ -21,6 +21,7 @@ function showPopup() {
   body.classList.add('modal-open');
 
   document.addEventListener('keydown', onPopupEscKeyDown);
+
 }
 
 function closePopup() {
